@@ -2,6 +2,16 @@ import 'package:bytebank/models/transferencia.dart';
 import 'package:flutter/material.dart';
 import '../../components/editor.dart';
 
+const _tituloAppBar = 'Criando Transferência';
+
+const _rotuloCampoNumeroConta = 'Número da Conta';
+const _dicaCampoNumeroConta = '0000';
+
+const _rotuloCampoValor = 'Valor';
+const _dicaCampoValor = '0.00';
+
+cont _textoBotaoConfirmar = 'Confirmar';
+
 class FormularioTransferencia extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -18,24 +28,24 @@ class FormularioTransferenciaState extends State<FormularioTransferencia> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Criando Tranferência'),
+        title: const Text(_tituloAppBar),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Editor(
               controlador: _controladorCampoNumeroConta,
-              rotulo: 'Número da Conta',
-              dica: '0000',
+              rotulo: _rotuloCampoNumeroConta,
+              dica: _dicaCampoNumeroConta,
             ),
             Editor(
               controlador: _controladorCampoValor,
-              rotulo: 'Valor',
-              dica: '0.00',
+              rotulo: _rotuloCampoValor,
+              dica: _dicaCampoValor,
               icone: Icons.monetization_on,
             ),
             ElevatedButton(
-                child: const Text('Confirmar'),
+                child: Text(_textoBotaoConfirmar),
                 onPressed: () {
                   _criaTransferencia(context);
                 }),
@@ -50,8 +60,6 @@ class FormularioTransferenciaState extends State<FormularioTransferencia> {
     final double? valor = double.tryParse(_controladorCampoValor.text);
     if (numeroConta != null && valor != null) {
       final transferenciaCriada = Tranferencia(valor, numeroConta);
-      debugPrint('criando transferência');
-      debugPrint('$transferenciaCriada');
       Navigator.pop(context, transferenciaCriada);
     }
   }
