@@ -13,7 +13,7 @@ class BytebankApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSwatch(
             primarySwatch: Colors.green,
           ).copyWith(
-            secondary: Colors.blueAccent.shade700,
+            secondary: Colors.blueAccent.shade400,
           ),
           // textTheme:
           //  ButtonTextTheme.primary,
