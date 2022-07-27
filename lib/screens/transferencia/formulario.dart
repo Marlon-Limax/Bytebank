@@ -10,7 +10,7 @@ const _dicaCampoNumeroConta = '0000';
 const _rotuloCampoValor = 'Valor';
 const _dicaCampoValor = '0.00';
 
-cont _textoBotaoConfirmar = 'Confirmar';
+const _textoBotaoConfirmar = 'Confirmar';
 
 class FormularioTransferencia extends StatefulWidget {
   @override
@@ -45,7 +45,7 @@ class FormularioTransferenciaState extends State<FormularioTransferencia> {
               icone: Icons.monetization_on,
             ),
             ElevatedButton(
-                child: Text(_textoBotaoConfirmar),
+                child: const Text(_textoBotaoConfirmar),
                 onPressed: () {
                   _criaTransferencia(context);
                 }),

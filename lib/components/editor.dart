@@ -12,6 +12,7 @@ class Editor extends StatelessWidget {
     this.dica,
     this.icone,
   });
+
   @override
   Widget build(BuildContext context) {
     return Padding(

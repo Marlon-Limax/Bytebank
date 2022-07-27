@@ -9,11 +9,11 @@ class ListaTranferencia extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return ListaTransferenciasState();
+    return ListaTransferenciaState();
   }
 }
 
-class ListaTransferenciasState extends State<ListaTranferencia> {
+class ListaTransferenciaState extends State<ListaTranferencia> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
